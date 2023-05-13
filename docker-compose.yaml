@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  nginx_server:
+    container_name: nginx_server
+    image: nginx:latest
+    restart: on-failure
+    ports:
+      - '8080:80'
+    volumes:
+      - ./nginx/conf.d/default.conf:/etx/nginx/conf.d/default.conf
+
+  app:
+    container_name: app
+    restart: on-failure
+    build:
+      dockerfile: ./node/Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
