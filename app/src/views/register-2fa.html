@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto mt-4">
+    <h1>Set 2FA</h1>
+    <form action="/otp/verify" method="POST">
+        <p>Scan the QR Code in the Authenticator app then enter the code in the text field and submit.</p>
+        <img src="{{qr}}" class="img-fluid" />
+        <div class="mb-3">
+            <label for="code" class="form-label">2FA Code</label>
+            <input type="text" class="form-control" id="code" name="code">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

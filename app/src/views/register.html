@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="bg-white border mt-5 w-50 m-auto d-flex justify-content-center">
+
+    <section class="p-4 d-flex justify-content-center pb-4 flex-column" style="width: 400px;">
+        <div class="w-100 mb-5 text-center">
+            <h2>Please, Sign Up</h2>
+        </div>
+
+        <form method="POST" action="/signup">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <input type="email" id="email" class="form-control" name="email" />
+                <label class="form-label" for="email">Email address</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="password" class="form-control" name="password" />
+                <label class="form-label" for="password">Password</label>
+            </div>
+            <!-- Reapeat password input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="repeatPassword" class="form-control" name="repeatPassword" />
+                <label class="form-label" for="repeatPassword"> Repeat password</label>
+            </div>
+
+            <!-- Submit button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
+            </div>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Are you a member? <a href="/signin">Sign In</a></p>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}
